@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teranga Immo — Agence immobilière</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F1E3D; --navy-dark:#081428; --sand:#E8DCC8; --paper:#FAF8F4; --gold:#B8873D; --white:#fff;
+    --serif:'Fraunces',Georgia,serif; --sans:'Work Sans',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--navy-dark);line-height:1.5;}
+  a{text-decoration:none;color:inherit;}
+  .badge-top{background:var(--navy-dark);color:#fff;text-align:center;font-size:12.5px;font-weight:600;padding:9px 16px;}
+  .badge-top a{color:var(--sand);text-decoration:underline;}
+  header{padding:22px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(15,30,61,0.08);}
+  .logo{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--navy);}
+  nav a{font-size:14px;font-weight:500;margin-left:22px;color:var(--navy-dark);}
+  .hero{padding:60px 24px 50px;background:linear-gradient(160deg,var(--navy),var(--navy-dark));text-align:center;color:#fff;}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,5vw,46px);margin:0 0 14px;}
+  .hero p{font-size:16.5px;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 28px;}
+  .btn{display:inline-block;background:var(--gold);color:var(--navy-dark);padding:13px 26px;border-radius:3px;font-weight:600;font-size:15px;}
+  .listings{max-width:900px;margin:0 auto;padding:56px 24px;}
+  .listings h2{font-family:var(--serif);font-size:26px;text-align:center;margin-bottom:36px;color:var(--navy);}
+  .listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .listing-card{background:var(--white);border:1px solid rgba(15,30,61,0.08);border-radius:6px;overflow:hidden;}
+  .listing-card .photo{height:120px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:12.5px;}
+  .photo-1{background:linear-gradient(155deg,#2A4066,var(--navy));}
+  .photo-2{background:linear-gradient(155deg,#8A6B3A,var(--gold));}
+  .photo-3{background:linear-gradient(155deg,#3D3226,#5A4A32);}
+  .listing-card .info{padding:16px;}
+  .listing-card h3{font-size:15px;margin:0 0 4px;font-family:var(--serif);}
+  .listing-card .loc{font-size:12.5px;color:#8a8378;margin-bottom:8px;}
+  .listing-card .price{font-weight:700;color:var(--navy);font-size:15px;}
+  @media(max-width:700px){.listing-grid{grid-template-columns:1fr;}}
+  .cta-band{background:var(--sand);text-align:center;padding:56px 24px;}
+  .cta-band h2{font-family:var(--serif);font-size:26px;margin:0 0 12px;color:var(--navy);}
+  .cta-band p{color:#5a5245;margin:0 0 24px;}
+  footer{padding:26px 24px;text-align:center;font-size:12.5px;color:#9a9184;background:var(--navy-dark);}
+</style>
+</head>
+<body>
+<div class="badge-top">Concept démonstratif — projet non réel, exemple de style pour votre secteur · <a href="index.html#demonstrations">Retour au site Angy Digital</a></div>
+<header>
+  <span class="logo">Teranga Immo</span>
+  <nav>
+    <a href="#biens">Nos biens</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<section class="hero">
+  <h1>Trouvez le bien qui vous ressemble.</h1>
+  <p>Vente et location de villas, appartements et terrains à Dakar et ses environs.</p>
+  <a class="btn" href="https://wa.me/221770000000?text=Bonjour%2C%20je%20cherche%20un%20bien%20immobilier.">Discuter sur WhatsApp</a>
+</section>
+<section class="listings" id="biens">
+  <h2>Biens disponibles</h2>
+  <div class="listing-grid">
+    <div class="listing-card"><div class="photo photo-1">Photo du bien</div><div class="info"><h3>Villa 4 pièces</h3><div class="loc">Almadies, Dakar</div><div class="price">85 000 000 FCFA</div></div></div>
+    <div class="listing-card"><div class="photo photo-2">Photo du bien</div><div class="info"><h3>Appartement 3 pièces</h3><div class="loc">Mermoz, Dakar</div><div class="price">450 000 FCFA / mois</div></div></div>
+    <div class="listing-card"><div class="photo photo-3">Photo du bien</div><div class="info"><h3>Terrain 300 m²</h3><div class="loc">Diamniadio</div><div class="price">22 000 000 FCFA</div></div></div>
+  </div>
+</section>
+<section class="cta-band" id="contact">
+  <h2>Un projet immobilier ?</h2>
+  <p>Nos conseillers vous accompagnent, de la visite à la signature.</p>
+  <a class="btn" href="https://wa.me/221770000000?text=Bonjour%2C%20je%20cherche%20un%20bien%20immobilier.">Écrire sur WhatsApp</a>
+</section>
+<footer>Exemple conceptuel réalisé par Angy Digital — Dakar, Sénégal</footer>
+</body>
+</html>
