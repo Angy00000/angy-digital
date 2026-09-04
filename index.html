@@ -602,62 +602,110 @@ align-items:start;
   }
   .price-card{
     background:var(--white);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:30px 26px;
+    border:2px solid var(--line);
+    border-radius:14px;
+    padding:34px 28px;
     display:flex;
     flex-direction:column;
     position:relative;
+    box-shadow:0 10px 28px rgba(11,18,38,0.08);
+    transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .price-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 26px 52px rgba(11,18,38,0.20);
+    border-color:var(--gold-500);
+  }
+  .price-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    border-radius:14px 14px 0 0;
+    background:linear-gradient(90deg,var(--gold-500),var(--cyan-400));
+  }
+  .price-card.mesure::before{
+    background:linear-gradient(90deg,var(--red-500),var(--purple-500));
   }
   .price-card.featured{
-    border:2px solid var(--gold-500);
-    box-shadow:0 20px 44px rgba(30,79,216,0.18);
-    transform:translateY(-14px);
+    border:3px solid var(--gold-500);
+    box-shadow:0 28px 60px rgba(30,79,216,0.28);
+    transform:translateY(-18px) scale(1.03);
     padding-top:0;
   }
+  .price-card.featured:hover{
+    transform:translateY(-24px) scale(1.03);
+  }
   .featured-flag{
-    background:var(--red-500);
+    background:linear-gradient(90deg,var(--red-500),var(--red-600));
     color:var(--white);
     text-align:center;
-    font-size:13px;
-    font-weight:700;
-    padding:9px 0;
-    margin:0 -26px 24px;
-    border-radius:6px 6px 0 0;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:0.02em;
+    padding:12px 0;
+    margin:0 -28px 24px;
+    border-radius:11px 11px 0 0;
+    box-shadow:0 6px 16px rgba(214,54,44,0.3);
   }
   .price-card.mesure{
     background:var(--navy-950);
-    border-color:var(--navy-950);
+    border-color:var(--navy-700);
   }
-  .price-card h3{ font-size:20px; margin-bottom:6px; }
+  .price-card.mesure:hover{
+    border-color:var(--cyan-400);
+    box-shadow:0 26px 52px rgba(34,211,238,0.22);
+  }
+  .price-card h3{ font-size:22px; font-weight:700; margin-bottom:8px; }
   .price-card.mesure h3{ color:var(--white); }
-  .price-tagline{ font-size:13.5px; color:var(--ink-500); margin-bottom:20px; min-height:36px; }
-  .price-card.mesure .price-tagline{ color:rgba(255,255,255,0.6); }
-  .price-amount{ font-family:var(--serif); font-size:32px; font-weight:700; color:var(--navy-900); }
-  .price-card.mesure .price-amount{ color:var(--white); font-size:24px; }
-  .price-amount .cur{ font-size:15px; font-weight:600; color:var(--ink-500); margin-left:4px; }
+  .price-tagline{ font-size:14px; color:var(--ink-500); margin-bottom:22px; min-height:36px; line-height:1.4; }
+  .price-card.mesure .price-tagline{ color:rgba(255,255,255,0.65); }
+  .price-amount{ font-family:var(--serif); font-size:38px; font-weight:700; color:var(--navy-900); }
+  .price-card.mesure .price-amount{ color:var(--white); font-size:26px; }
+  .price-amount .cur{ font-size:16px; font-weight:600; color:var(--ink-500); margin-left:4px; }
   .price-pages{
+    display:inline-block;
     font-size:13.5px;
-    font-weight:600;
+    font-weight:700;
     color:var(--gold-600);
-    margin:10px 0 22px;
-    padding-bottom:20px;
-    border-bottom:1px solid var(--line);
+    background:var(--gold-100);
+    padding:6px 14px;
+    border-radius:999px;
+    margin:14px 0 24px;
   }
-  .price-card.mesure .price-pages{ border-bottom-color:rgba(255,255,255,0.12); }
-  .price-list{ flex-grow:1; margin-bottom:26px; }
+  .price-card.mesure .price-pages{ background:rgba(34,211,238,0.15); color:var(--cyan-400); }
+  .price-list{ flex-grow:1; margin-bottom:26px; padding-top:16px; border-top:1px solid var(--line); }
+  .price-card.mesure .price-list{ border-top-color:rgba(255,255,255,0.12); }
   .price-list li{
     display:flex;
-    gap:10px;
+    gap:12px;
     align-items:flex-start;
-    font-size:14px;
+    font-size:14.5px;
+    font-weight:500;
     color:var(--ink-700);
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
-  .price-card.mesure .price-list li{ color:rgba(255,255,255,0.78); }
-  .price-list svg{ width:16px;height:16px;color:var(--gold-600); flex-shrink:0; margin-top:2px; }
-  .price-delay{ font-size:13px; color:var(--ink-500); margin-bottom:16px; font-weight:500; }
-  .price-card.mesure .price-delay{ color:rgba(255,255,255,0.55); }
+  .price-card.mesure .price-list li{ color:rgba(255,255,255,0.85); }
+  .price-list svg{
+    width:22px;height:22px;
+    padding:3px;
+    color:var(--white);
+    background:var(--gold-500);
+    border-radius:50%;
+    flex-shrink:0;
+  }
+  .price-card.mesure .price-list svg{ background:var(--cyan-400); }
+  .price-delay{
+    display:inline-block;
+    font-size:13px;
+    color:var(--green-600);
+    background:rgba(14,165,160,0.12);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+    font-weight:700;
+  }
+  .price-card.mesure .price-delay{ color:var(--cyan-400); background:rgba(34,211,238,0.12); }
 
   @media (max-width:1020px){
     .pricing-grid{ grid-template-columns:repeat(2,1fr); }
@@ -1175,6 +1223,48 @@ align-items:start;
     </div>
 
     <p class="pricing-legal">Détails précis de chaque formule communiqués lors de l'échange WhatsApp et confirmés dans le devis.</p>
+  </div>
+</section>
+
+<!-- ===================== SERVICES COMPLEMENTAIRES ===================== -->
+<section class="section-tight reveal" id="services-complementaires" style="background:var(--paper-dim); padding:64px 0;">
+  <div class="container">
+    <div class="section-head">
+      <h2>Au-delà du site, développez votre présence digitale</h2>
+      <p class="pricing-note">Des services complémentaires pour faire vivre votre activité en ligne au quotidien.</p>
+    </div>
+
+    <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+
+      <!-- RESEAUX SOCIAUX ET PUB -->
+      <div class="price-card">
+        <h3>Réseaux sociaux et publicité</h3>
+        <p class="price-tagline">Pour être vu et générer des clients sur Facebook, Instagram et TikTok</p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Création et gestion de vos pages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Création de contenus et visuels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Campagnes publicitaires ciblées Dakar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Suivi mensuel des performances</li>
+        </ul>
+        <p class="price-delay">Formule mensuelle, devis selon besoin</p>
+        <a class="btn btn-outline btn-block" href="https://wa.me/221710538917?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20gestion%20de%20mes%20r%C3%A9seaux%20sociaux%20et%20publicit%C3%A9." target="_blank" rel="noopener">En savoir plus</a>
+      </div>
+
+      <!-- APPLICATION DE GESTION SUR MESURE -->
+      <div class="price-card">
+        <h3>Application de gestion sur mesure</h3>
+        <p class="price-tagline">Pour piloter votre boutique, votre stock ou votre caisse depuis un seul outil</p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Gestion des ventes et du stock</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Suivi clients et commandes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Accessible sur mobile et ordinateur</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Adaptée à votre activité (commerce, école, etc.)</li>
+        </ul>
+        <p class="price-delay">Devis personnalisé après cadrage</p>
+        <a class="btn btn-outline btn-block" href="https://wa.me/221710538917?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20une%20application%20de%20gestion%20sur%20mesure." target="_blank" rel="noopener">En savoir plus</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
